@@ -29,7 +29,7 @@ const Task1= () => {
             key={product.id}     
             name={product.name}
             price={product.price}
-            />
+            />  
         ))}
       </div>
     </div>
