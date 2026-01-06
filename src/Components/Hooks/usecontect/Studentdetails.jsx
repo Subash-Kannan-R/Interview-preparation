@@ -7,12 +7,14 @@ const StudentDetails = () => {
 
   return (
     <div>
-      <h3>Subjects</h3>
-      <ul className="subject">
-        {subjects.map((subject, index) => (
-          <li key={index}>{subject}</li>
-        ))}
-      </ul>
+      <div>
+        <h3>Subjects</h3>
+        <ul className="subject">
+          {subjects.map((subject, index) => (
+            <li key={index}>{subject}</li>
+          ))}
+        </ul>
+      </div>
 
       <ContactInformation/>
     </div>

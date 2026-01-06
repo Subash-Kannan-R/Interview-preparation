@@ -10,8 +10,8 @@ const Task3 = () =>{
 
     const handlechangename= (event) =>{
         setName(event.target.value);
-        }    
- 
+        }
+
     const handlechangeemail = (event) =>{
         setEmail(event.target.value);
     }
@@ -24,23 +24,33 @@ const Task3 = () =>{
 
 
     return(
-    <>
-    <form onSubmit={handlesubmit}>
-        <label>Name:
-           <input type="text"
-            value = {name}
-            onChange = {handlechangename}/>
-        </label>
-        <label>Email:
-            <input type="email" 
-            value = {email}
-            onChange = {handlechangeemail} />
-        </label>
-        <button type="submit" disabled={!valid}>Submit</button>
-    </form>
-
-
-    </>
+    <div>
+        <h2>Contact Form</h2>
+        <form onSubmit={handlesubmit}>
+            <div>
+                <label>Name:</label>
+                <input
+                    type="text"
+                    value={name}
+                    onChange={handlechangename}
+                />
+            </div>
+            <div>
+                <label>Email:</label>
+                <input
+                    type="email"
+                    value={email}
+                    onChange={handlechangeemail}
+                />
+            </div>
+            <button
+                type="submit"
+                disabled={!valid}
+            >
+                Submit
+            </button>
+        </form>
+    </div>
     )
 };
 export default Task3;

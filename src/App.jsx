@@ -1,29 +1,27 @@
-import Student from "./Components/Hooks/usecontect/Student";
-import Useeffect from "./Components/Hooks/Useeffect";
-import Finalcounter from "./Components/Hooks/usereducer/Finalcounter";
-import Useref from "./Components/Hooks/Useref";
-import Usestate from "./Components/Hooks/Usestate";
-import Usestatecart from "./Components/Hooks/Usestatecart";
-import Task1 from "./Components/Task1";
-import Task3 from "./Components/Task3";
-import Usecallback from "./Components/Hooks/usecallback";
-import Usememo from "./Components/Hooks/Usememo";
+import React, { Suspense, lazy } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
-const App = () =>{
+const Home = lazy(() => import("./Components/Lazyloading/Home"));
+const About = lazy(() => import("./Components/Lazyloading/About"));
 
+const App = () => {
+  return (
+    <div>
+      <h1>React Lazy Loading Example</h1>
 
-  return (    <div>
-      {/* <Task1 /> */}
-      {/* <  Task3 /> */}
-      {/* <Usestate />
-      <Usestatecart /> */}
-      {/* <Useeffect/> */}
-      {/* <Useref /> */}
-      {/* <Student /> */}
-      {/* <Finalcounter /> */}
-      {/* <Usecallback /> */}
-      <Usememo />
+      <nav>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/about">About</Link>
+      </nav>
+
+      <Suspense fallback={<p>Loading page...</p>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Suspense>
     </div>
-  )
-}
+  );
+};
+
 export default App;

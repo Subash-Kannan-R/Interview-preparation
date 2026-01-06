@@ -5,12 +5,12 @@ const Task1= () => {
     return (
       <div>
         <h3>{name}</h3>
-        <p>₹{price}</p>
+        <p>₹{price.toLocaleString()}</p>
       </div>
     );
   };
 
- 
+
   const products = [
     { id: 1, name: "Laptop", price: 55000 },
     { id: 2, name: "Mobile", price: 25000},
@@ -26,16 +26,14 @@ const Task1= () => {
       <div>
         {products.map((product) => (
           <ProductCard
-            key={product.id}     
+            key={product.id}
             name={product.name}
             price={product.price}
-            />  
+            />
         ))}
       </div>
     </div>
   );
 };
-
-
 
 export default Task1;
